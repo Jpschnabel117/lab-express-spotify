@@ -49,8 +49,8 @@ app.get("/albums/:artistId", (req, res, next) => {
 app.get("/tracklist/:albumId", (req, res, next) => {
   spotifyApi.getAlbumTracks(req.params.albumId).then((data) => {
     console.log(data.body);
-    let tracklist = data.body.items
-     res.render("tracks", { tracklist });
+    let tracklist = data.body.items;
+    res.render("tracks", { tracklist });
   });
 });
 
